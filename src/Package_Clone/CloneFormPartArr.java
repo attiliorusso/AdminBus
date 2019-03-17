@@ -1,5 +1,24 @@
 package Package_Clone;
 
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+
+import Prenotazioni.Controller.SportelloSystem;
+import Prenotazioni.Model.Beans.Corsa;
+import Prenotazioni.Model.Beans.Località;
+import Prenotazioni.Model.DB.DAOFactory;
+import Prenotazioni.View.CorseView;
+
 public class CloneFormPartArr {
 	public CloneFormPartArr() {
 		frame = new JFrame();
