@@ -20,6 +20,10 @@ import Prenotazioni.Model.DB.DAOFactory;
 import Prenotazioni.View.CorseView;
 
 public class CloneFormPartArr {
+	
+	private JFrame frame;
+	private SportelloSystem controller;
+	
 	public CloneFormPartArr() {
 		frame = new JFrame();
 		frame.setTitle("Admin bus App");
