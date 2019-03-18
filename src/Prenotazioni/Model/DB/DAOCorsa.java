@@ -116,6 +116,29 @@ public class DAOCorsa implements DAOInterface<Corsa> {
 		
 		return listaCorse;
 	}
+	
+	public List<Corsa> doRetrieveByPlace2(String from, String to) {
+		List<Corsa> listaCorse2 = new ArrayList<Corsa>();
+
+		List<Linea> linee = DAOFactory.getDAOLinea().doRetrieveByPlace(from, to);
+
+		for(Linea l : linee) {
+			try {
+				Connection connection = DataSource.getConnection();
+				Statement statement = connection.createStatement();
+				ResultSet result = statement.executeQuery("SELECT * FROM corse WHERE nome_linea = '"+l.getNome()+"' and data_ora >= CURTIME()");
+				while(result.next()) {
+					Corsa corsa = doRetrieveByKey(result.getInt("id"));
+					listaCorse2.add(corsa);				
+					
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return listaCorse2;
+	}
 
 	
 	public Corsa doRetrieveByKey(int ID) {
