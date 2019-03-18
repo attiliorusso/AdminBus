@@ -15,7 +15,7 @@ import Prenotazioni.Controller.SportelloSystem;
 import Prenotazioni.Model.Beans.Biglietto;
 import Prenotazioni.Model.Beans.Corsa;
 
-public class CloneCloneConfermaBigliettoView {
+public class CloneConfermaBigliettoView {
 	
 	private JFrame frame;
 	private SportelloSystem controller;
